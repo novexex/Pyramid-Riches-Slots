@@ -1,9 +1,9 @@
 
 import Foundation
-import UIKit
 
 final class StorageService: ObservableObject {
     static let shared = StorageService()
+    
     private init() {}
     
     private let userDefaults = UserDefaults.standard
