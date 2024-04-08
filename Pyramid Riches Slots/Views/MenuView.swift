@@ -10,7 +10,6 @@ struct MenuView: View {
     private let levelsAmount = 3
     
     var body: some View {
-        
         ZStack {
             Image(.menuBackground)
                 .resizable()
@@ -24,6 +23,8 @@ struct MenuView: View {
         }
         .navigate(to: InfoView(),
                   when: $isSettingsViewPresented)
+        .navigate(to: GameView(),
+                  when: $isGameViewPresented)
     }
     
     var topUI: some View {
@@ -52,7 +53,7 @@ struct MenuView: View {
                             .padding(.bottom)
                         
                         Button {
-                            
+                            isGameViewPresented.toggle()
                         } label: {
                             Image(.playButton)
                         }

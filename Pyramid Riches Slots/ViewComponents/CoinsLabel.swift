@@ -7,6 +7,8 @@ struct CoinsLabel: View {
     var body: some View {
         HStack {
             Image(.coinIcon)
+                .shadow(color: .black,
+                        radius: 4, x: -3, y: 3)
             
             Text(storage.coinsAmount.description)
                 .font(.muller(size: 70/Double.delim))

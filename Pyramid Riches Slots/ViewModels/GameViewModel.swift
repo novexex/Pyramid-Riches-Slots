@@ -10,13 +10,14 @@ extension GameView {
         
         private let rows = 3
         private let cols = 5
+        private let storage = StorageService()
         private let availableTiles = (1...9).map { "tile\($0)" }
         
         var enumeratedTiles: [(offset: Int, element: String)] {
             Array(tiles.enumerated())
         }
         
-        func fillBoard() {
+        func refillBoard() {
             tiles = Array(repeating: "", count: rows * cols)
             
             for i in 0..<rows*cols {
@@ -24,6 +25,11 @@ extension GameView {
                     tiles[i] = randomTile
                 }
             }
+        }
+        
+        func spin() {
+            refillBoard()
+            storage.coinsAmount -= betAmount
         }
     }
 }

@@ -24,7 +24,7 @@ struct GameView: View {
             }
         }
         .onAppear {
-            viewModel.fillBoard()
+            viewModel.refillBoard()
         }
     }
     
@@ -67,7 +67,7 @@ struct GameView: View {
     var spinButton: some View {
         Button {
             withAnimation {
-                viewModel.fillBoard()
+                viewModel.spin()
             }
         } label: {
             Image(.spinButton)
@@ -77,6 +77,7 @@ struct GameView: View {
                         .foregroundStyle(.white)
                 }
         }
+        .disabled(storage.coinsAmount < viewModel.betAmount || viewModel.betAmount == 0)
     }
     
     var betLabel: some View {
