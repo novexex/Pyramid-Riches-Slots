@@ -2,11 +2,10 @@
 import Foundation
 
 final class StorageService: ObservableObject {
-    private let userDefaults: UserDefaults
+    static let shared = StorageService()
+    private init() {}
     
-    init(userDefaults: UserDefaults = .standard) {
-        self.userDefaults = userDefaults
-    }
+    private let userDefaults = UserDefaults.standard
     
     var isFirstLaunch: Bool {
         get {

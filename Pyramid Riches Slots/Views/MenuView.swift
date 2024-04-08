@@ -2,7 +2,7 @@
 import SwiftUI
 
 struct MenuView: View {
-    @StateObject private var storage = StorageService()
+    @StateObject private var storage = StorageService.shared
     
     @State private var isSettingsViewPresented = false
     @State private var isGameViewPresented = false

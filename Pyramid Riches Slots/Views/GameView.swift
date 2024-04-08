@@ -5,7 +5,7 @@ struct GameView: View {
     @Environment(\.dismiss) private var dismiss
     
     @StateObject private var viewModel = ViewModel()
-    @StateObject private var storage = StorageService()
+    @StateObject private var storage = StorageService.shared
     
     var body: some View {
         ZStack {

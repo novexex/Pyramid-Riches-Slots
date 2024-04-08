@@ -2,7 +2,7 @@
 import SwiftUI
 
 struct CoinsLabel: View {
-    @StateObject private var storage = StorageService()
+    @StateObject private var storage = StorageService.shared
     
     var body: some View {
         HStack {

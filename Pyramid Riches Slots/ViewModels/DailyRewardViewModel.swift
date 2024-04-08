@@ -3,12 +3,10 @@ import SwiftUI
 
 extension DailyRewardLabel {
     final class ViewModel: ObservableObject {
-        @ObservedObject private var storage = StorageService()
+        @ObservedObject private var storage = StorageService.shared
         
         var isDailyBonusAvailable: Bool {
             guard let lastDailyBonusPick = storage.dailyBonusLastClaimDate else { return true }
-            
-            print(lastDailyBonusPick)
             
             let currentDate = Date()
             let calendar = Calendar.current
