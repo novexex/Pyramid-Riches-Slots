@@ -30,6 +30,9 @@
 		0AB228D22BC385BF0012BCB5 /* DailyRewardLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB228D12BC385BF0012BCB5 /* DailyRewardLabel.swift */; };
 		0AB228D42BC387410012BCB5 /* DailyRewardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB228D32BC387410012BCB5 /* DailyRewardViewModel.swift */; };
 		0AB228D82BC399400012BCB5 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB228D72BC399400012BCB5 /* BackButton.swift */; };
+		0AB228DA2BC3A0750012BCB5 /* MullerMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0AB228D92BC3A0750012BCB5 /* MullerMedium.ttf */; };
+		0AB228DC2BC3A3BE0012BCB5 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB228DB2BC3A3BE0012BCB5 /* GameView.swift */; };
+		0AB228DE2BC3A7740012BCB5 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB228DD2BC3A7740012BCB5 /* GameViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +60,9 @@
 		0AB228D12BC385BF0012BCB5 /* DailyRewardLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyRewardLabel.swift; sourceTree = "<group>"; };
 		0AB228D32BC387410012BCB5 /* DailyRewardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyRewardViewModel.swift; sourceTree = "<group>"; };
 		0AB228D72BC399400012BCB5 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
+		0AB228D92BC3A0750012BCB5 /* MullerMedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MullerMedium.ttf; sourceTree = "<group>"; };
+		0AB228DB2BC3A3BE0012BCB5 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		0AB228DD2BC3A7740012BCB5 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		EB63AE7A2AE810A300454218 /* Pyramid Riches Slots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pyramid Riches Slots.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -148,6 +154,7 @@
 				0AB228A92BBF4C6C0012BCB5 /* MenuView.swift */,
 				0AB228BD2BC07A800012BCB5 /* NotificationsView.swift */,
 				0AB228CF2BC384C70012BCB5 /* InfoView.swift */,
+				0AB228DB2BC3A3BE0012BCB5 /* GameView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -164,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				0AB228D32BC387410012BCB5 /* DailyRewardViewModel.swift */,
+				0AB228DD2BC3A7740012BCB5 /* GameViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -174,6 +182,7 @@
 				0AB228C02BC07ADC0012BCB5 /* Inter-Bold.ttf */,
 				0AB228C92BC37F6D0012BCB5 /* MultiroundPro.otf */,
 				0AB228CB2BC383120012BCB5 /* Muller Bold.ttf */,
+				0AB228D92BC3A0750012BCB5 /* MullerMedium.ttf */,
 				0AB228C22BC07B850012BCB5 /* Inter-Medium.ttf */,
 			);
 			path = Fonts;
@@ -270,6 +279,7 @@
 				0AB228C12BC07ADC0012BCB5 /* Inter-Bold.ttf in Resources */,
 				0AB228C32BC07B850012BCB5 /* Inter-Medium.ttf in Resources */,
 				0AB228CA2BC37F6D0012BCB5 /* MultiroundPro.otf in Resources */,
+				0AB228DA2BC3A0750012BCB5 /* MullerMedium.ttf in Resources */,
 				0AB228AE2BBF4C6C0012BCB5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,11 +291,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AB228DE2BC3A7740012BCB5 /* GameViewModel.swift in Sources */,
 				0AB228BC2BBF54200012BCB5 /* AppDelegate.swift in Sources */,
 				0AB228B42BBF4C6C0012BCB5 /* Font.swift in Sources */,
 				0AB228B52BBF4C6C0012BCB5 /* Text.swift in Sources */,
 				0AB228D22BC385BF0012BCB5 /* DailyRewardLabel.swift in Sources */,
 				0AB228C82BC37CE60012BCB5 /* CoinsLabel.swift in Sources */,
+				0AB228DC2BC3A3BE0012BCB5 /* GameView.swift in Sources */,
 				0AB228CE2BC384990012BCB5 /* InfoButton.swift in Sources */,
 				0AB228B62BBF4C6C0012BCB5 /* MenuView.swift in Sources */,
 				0AB228C52BC07CFE0012BCB5 /* Double.swift in Sources */,
