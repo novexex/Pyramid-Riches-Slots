@@ -2,6 +2,10 @@
 import SwiftUI
 
 struct NotificationsView: View {
+    private let notificationsService: NotificationsRequestProtocol = NotificationsService()
+    
+    @State private var isMenuViewPresented = false
+    
     var body: some View {
         ZStack {
             Image(.notificationsBackground)
@@ -21,7 +25,9 @@ struct NotificationsView: View {
                     .padding(.bottom, 20)
                 
                 Button {
-                    
+                    notificationsService.requestNotificationsAccess {
+                        isMenuViewPresented.toggle()
+                    }
                 } label: {
                     Text(Constants.notificationsAcceptButton)
                         .font(.inter(size: 46/Double.delim, weight: .medium))
@@ -33,7 +39,7 @@ struct NotificationsView: View {
                 .cornerRadius(22/2.7)
                 
                 Button {
-                    
+                    isMenuViewPresented.toggle()
                 } label: {
                     Text(Constants.notificationsSkipButton)
                         .font(.inter(size: 46/Double.delim, weight: .medium))
@@ -43,6 +49,8 @@ struct NotificationsView: View {
             }
             .frame(maxHeight: .infinity, alignment: .bottom)
         }
+        .navigate(to: MenuView(),
+                  when: $isMenuViewPresented)
     }
 }
 

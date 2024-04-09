@@ -30,4 +30,8 @@ enum Constants {
         startPoint: UnitPoint(x: 0.5, y: 0),
         endPoint: UnitPoint(x: 0.5, y: 1)
     )
+    
+    static let privacyLink = "https://google.com"
+    static let termsLink = "https://yandex.ru"
+    static let writeUsLink = "https://vk.com"
 }

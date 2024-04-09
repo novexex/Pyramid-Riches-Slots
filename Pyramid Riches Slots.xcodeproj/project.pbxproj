@@ -14,7 +14,6 @@
 		0AB228B22BBF4C6C0012BCB5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB228A32BBF4C6C0012BCB5 /* Constants.swift */; };
 		0AB228B32BBF4C6C0012BCB5 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB228A52BBF4C6C0012BCB5 /* View.swift */; };
 		0AB228B42BBF4C6C0012BCB5 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB228A62BBF4C6C0012BCB5 /* Font.swift */; };
-		0AB228B52BBF4C6C0012BCB5 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB228A72BBF4C6C0012BCB5 /* Text.swift */; };
 		0AB228B62BBF4C6C0012BCB5 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB228A92BBF4C6C0012BCB5 /* MenuView.swift */; };
 		0AB228B82BBF4C6C0012BCB5 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB228AC2BBF4C6C0012BCB5 /* StorageService.swift */; };
 		0AB228BC2BBF54200012BCB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB228BB2BBF54200012BCB5 /* AppDelegate.swift */; };
@@ -33,6 +32,10 @@
 		0AB228DA2BC3A0750012BCB5 /* MullerMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0AB228D92BC3A0750012BCB5 /* MullerMedium.ttf */; };
 		0AB228DC2BC3A3BE0012BCB5 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB228DB2BC3A3BE0012BCB5 /* GameView.swift */; };
 		0AB228DE2BC3A7740012BCB5 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB228DD2BC3A7740012BCB5 /* GameViewModel.swift */; };
+		0AB228E02BC4B31C0012BCB5 /* NotificationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB228DF2BC4B31C0012BCB5 /* NotificationsService.swift */; };
+		0AB228E22BC4E2410012BCB5 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB228E12BC4E2410012BCB5 /* WebView.swift */; };
+		0AB228E42BC4E33B0012BCB5 /* TermsAndPrivacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB228E32BC4E33B0012BCB5 /* TermsAndPrivacyView.swift */; };
+		0AB228E62BC4EADF0012BCB5 /* TermsAndPrivacyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB228E52BC4EADF0012BCB5 /* TermsAndPrivacyViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,7 +47,6 @@
 		0AB228A32BBF4C6C0012BCB5 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0AB228A52BBF4C6C0012BCB5 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		0AB228A62BBF4C6C0012BCB5 /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
-		0AB228A72BBF4C6C0012BCB5 /* Text.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		0AB228A92BBF4C6C0012BCB5 /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		0AB228AC2BBF4C6C0012BCB5 /* StorageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		0AB228BB2BBF54200012BCB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,10 @@
 		0AB228D92BC3A0750012BCB5 /* MullerMedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MullerMedium.ttf; sourceTree = "<group>"; };
 		0AB228DB2BC3A3BE0012BCB5 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		0AB228DD2BC3A7740012BCB5 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		0AB228DF2BC4B31C0012BCB5 /* NotificationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsService.swift; sourceTree = "<group>"; };
+		0AB228E12BC4E2410012BCB5 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		0AB228E32BC4E33B0012BCB5 /* TermsAndPrivacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndPrivacyView.swift; sourceTree = "<group>"; };
+		0AB228E52BC4EADF0012BCB5 /* TermsAndPrivacyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndPrivacyViewModel.swift; sourceTree = "<group>"; };
 		EB63AE7A2AE810A300454218 /* Pyramid Riches Slots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pyramid Riches Slots.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -142,7 +148,6 @@
 			children = (
 				0AB228A52BBF4C6C0012BCB5 /* View.swift */,
 				0AB228A62BBF4C6C0012BCB5 /* Font.swift */,
-				0AB228A72BBF4C6C0012BCB5 /* Text.swift */,
 				0AB228C42BC07CFE0012BCB5 /* Double.swift */,
 			);
 			path = Extensions;
@@ -155,6 +160,7 @@
 				0AB228BD2BC07A800012BCB5 /* NotificationsView.swift */,
 				0AB228CF2BC384C70012BCB5 /* InfoView.swift */,
 				0AB228DB2BC3A3BE0012BCB5 /* GameView.swift */,
+				0AB228E32BC4E33B0012BCB5 /* TermsAndPrivacyView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -163,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				0AB228AC2BBF4C6C0012BCB5 /* StorageService.swift */,
+				0AB228DF2BC4B31C0012BCB5 /* NotificationsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -171,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				0AB228D32BC387410012BCB5 /* DailyRewardViewModel.swift */,
+				0AB228E52BC4EADF0012BCB5 /* TermsAndPrivacyViewModel.swift */,
 				0AB228DD2BC3A7740012BCB5 /* GameViewModel.swift */,
 			);
 			path = ViewModels;
@@ -195,6 +203,7 @@
 				0AB228CD2BC384990012BCB5 /* InfoButton.swift */,
 				0AB228D12BC385BF0012BCB5 /* DailyRewardLabel.swift */,
 				0AB228D72BC399400012BCB5 /* BackButton.swift */,
+				0AB228E12BC4E2410012BCB5 /* WebView.swift */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -294,16 +303,19 @@
 				0AB228DE2BC3A7740012BCB5 /* GameViewModel.swift in Sources */,
 				0AB228BC2BBF54200012BCB5 /* AppDelegate.swift in Sources */,
 				0AB228B42BBF4C6C0012BCB5 /* Font.swift in Sources */,
-				0AB228B52BBF4C6C0012BCB5 /* Text.swift in Sources */,
 				0AB228D22BC385BF0012BCB5 /* DailyRewardLabel.swift in Sources */,
+				0AB228E62BC4EADF0012BCB5 /* TermsAndPrivacyViewModel.swift in Sources */,
 				0AB228C82BC37CE60012BCB5 /* CoinsLabel.swift in Sources */,
 				0AB228DC2BC3A3BE0012BCB5 /* GameView.swift in Sources */,
 				0AB228CE2BC384990012BCB5 /* InfoButton.swift in Sources */,
+				0AB228E42BC4E33B0012BCB5 /* TermsAndPrivacyView.swift in Sources */,
 				0AB228B62BBF4C6C0012BCB5 /* MenuView.swift in Sources */,
 				0AB228C52BC07CFE0012BCB5 /* Double.swift in Sources */,
 				0AB228D82BC399400012BCB5 /* BackButton.swift in Sources */,
 				0AB228AD2BBF4C6C0012BCB5 /* PyramidRichesSlotsApp.swift in Sources */,
 				0AB228B22BBF4C6C0012BCB5 /* Constants.swift in Sources */,
+				0AB228E02BC4B31C0012BCB5 /* NotificationsService.swift in Sources */,
+				0AB228E22BC4E2410012BCB5 /* WebView.swift in Sources */,
 				0AB228B32BBF4C6C0012BCB5 /* View.swift in Sources */,
 				0AB228B82BBF4C6C0012BCB5 /* StorageService.swift in Sources */,
 				0AB228D42BC387410012BCB5 /* DailyRewardViewModel.swift in Sources */,

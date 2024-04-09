@@ -5,6 +5,31 @@ import StoreKit
 struct InfoView: View {
     @Environment(\.dismiss) private var dismiss
     
+    @State private var isWebViewPresented = false
+    @State private var linkType: LinkType = .privacyPolicy
+    
+    private var urlString: String {
+        switch linkType {
+        case .privacyPolicy:
+            Constants.privacyLink
+        case .termsOfUse:
+            Constants.termsLink
+        case .writeUs:
+            Constants.writeUsLink
+        }
+    }
+    
+    private var title: String {
+        switch linkType {
+        case .privacyPolicy:
+            "Privacy policy"
+        case .termsOfUse:
+            "Terms of use"
+        case .writeUs:
+            "Write us"
+        }
+    }
+    
     var body: some View {
         ZStack {
             Image(.gameBackground)
@@ -21,6 +46,10 @@ struct InfoView: View {
             .padding(.top)
             .frame(maxHeight: .infinity, alignment: .top)
         }
+        .navigate(to: TermsAndPrivacyView(urlString: urlString),
+                  when: $isWebViewPresented,
+                  isNavigationBarHidden: false,
+                  navigationBarTitle: title)
     }
     
     var scrollView: some View {
@@ -37,7 +66,8 @@ struct InfoView: View {
                 
                 VStack(spacing: 0) {
                     Button {
-                        
+                        linkType = .writeUs
+                        isWebViewPresented.toggle()
                     } label: {
                         HStack {
                             Image(.writeIcon)
@@ -82,12 +112,13 @@ struct InfoView: View {
                 
                 VStack(spacing: 0) {
                     Button {
-                        
+                        linkType = .privacyPolicy
+                        isWebViewPresented.toggle()
                     } label: {
                         HStack {
                             Image(.infoIcon)
                             
-                            Text("Privacy Policy")
+                            Text("Privacy policy")
                                 .font(.muller(size: 40/Double.delim, weight: .bold))
                                 .foregroundStyle(.white)
                             
@@ -97,7 +128,8 @@ struct InfoView: View {
                     }
                     
                     Button {
-                        
+                        linkType = .termsOfUse
+                        isWebViewPresented.toggle()
                     } label: {
                         HStack {
                             Image(.infoIcon)
@@ -125,6 +157,14 @@ struct InfoView: View {
                 SKStoreReviewController.requestReview(in: scene)
             }
         }
+    }
+}
+
+private extension InfoView {
+    enum LinkType {
+        case privacyPolicy
+        case termsOfUse
+        case writeUs
     }
 }
 

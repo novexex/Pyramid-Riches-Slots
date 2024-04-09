@@ -7,6 +7,7 @@ struct MenuView: View {
     @State private var isSettingsViewPresented = false
     @State private var isGameViewPresented = false
     
+    
     private let levelsAmount = 3
     
     var body: some View {
