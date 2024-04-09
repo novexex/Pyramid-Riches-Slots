@@ -126,10 +126,32 @@ struct GameView: View {
             
             LazyVGrid(columns: columns) {
                 ForEach(viewModel.enumeratedTiles, id: \.offset) { offset, tile in
-                    Image(tile)
+                    Tile(imageNamed: tile,
+                         isPulsating: viewModel.combinationsTilesIndices.contains(offset))
                 }
             }
         }
+    }
+}
+
+fileprivate struct Tile: View {
+    let imageNamed: String
+    let isPulsating: Bool
+    
+    @State private var isAnimating = false
+    
+    var body: some View {
+        Image(imageNamed)
+            .shadow(color: .blue,
+                    radius: isAnimating ? 30 : 0)
+            .scaleEffect(isAnimating ? 1.2 : 1.0)
+            .onChange(of: isPulsating) {
+                if $0 {
+                    withAnimation(Animation.easeInOut(duration: 1).repeatForever(autoreverses: true)) {
+                        isAnimating = true
+                    }
+                }
+            }
     }
 }
 

@@ -7,6 +7,7 @@ extension GameView {
         @Published var betAmount = 0
         
         @Published var tiles = [String]()
+        @Published var combinationsTilesIndices = [Int]()
         
         private let rows = 3
         private let cols = 5
@@ -35,62 +36,49 @@ extension GameView {
         }
         
         func findMatches() {
-            var horizontalSequencesCount = 0
-            var verticalSequencesCount = 0
-            var totalHorizontalTiles = 0
-            var totalVerticalTiles = 0
+            var sequences = [[Int]]()
             
-            // Функция для подсчета последовательностей в одном направлении
-            func countSequences(startIndex: Int, step: Int, lineLength: Int) -> (count: Int, totalTiles: Int) {
-                var count = 0
-                var totalTiles = 0
-                var sequenceLength = 1
-                
-                for i in 0..<(lineLength - 1) {
-                    let currentIndex = startIndex + i * step
-                    let nextIndex = currentIndex + step
-                    
-                    if tiles[currentIndex] == tiles[nextIndex] && tiles[currentIndex] != "" {
-                        sequenceLength += 1
-                    } else {
-                        if sequenceLength >= 3 {
-                            count += 1
-                            totalTiles += sequenceLength
+            // Поиск по горизонтали
+            for row in 0..<rows {
+                var count = 1
+                for col in 1..<cols {
+                    let index = row * cols + col
+                    let prevIndex = index - 1
+                    if tiles[index] == tiles[prevIndex] {
+                        count += 1
+                        if count >= 3 && (col == cols - 1 || tiles[index] != tiles[index + 1]) {
+                            let sequence = Array((index - count + 1)...index)
+                            sequences.append(sequence)
                         }
-                        sequenceLength = 1
+                    } else {
+                        count = 1
                     }
                 }
-                
-                // Проверка последней последовательности в строке/столбце
-                if sequenceLength >= 3 {
-                    count += 1
-                    totalTiles += sequenceLength
-                }
-                
-                return (count, totalTiles)
             }
-            
-            // Поиск горизонтальных последовательностей
-            for row in 0..<rows {
-                let (count, tiles) = countSequences(startIndex: row * cols, step: 1, lineLength: cols)
-                horizontalSequencesCount += count
-                totalHorizontalTiles += tiles
-            }
-            
-            // Поиск вертикальных последовательностей
+
+            // Поиск по вертикали
             for col in 0..<cols {
-                let (count, tiles) = countSequences(startIndex: col, step: cols, lineLength: rows)
-                verticalSequencesCount += count
-                totalVerticalTiles += tiles
+                var count = 1
+                for row in 1..<rows {
+                    let index = row * cols + col
+                    let prevIndex = index - cols
+                    if tiles[index] == tiles[prevIndex] {
+                        count += 1
+                        if count >= 3 && (row == rows - 1 || tiles[index] != tiles[index + cols]) {
+                            let sequence = stride(from: index, through: index - (count - 1) * cols, by: -cols).map { $0 }
+                            sequences.append(sequence)
+                        }
+                    } else {
+                        count = 1
+                    }
+                }
             }
             
-            if horizontalSequencesCount > 0 {
-                winAmount += (totalHorizontalTiles-1) * betAmount
+            sequences.forEach {
+                winAmount += $0.count * betAmount
             }
             
-            if verticalSequencesCount > 0 {
-                winAmount += (totalVerticalTiles-1) * betAmount
-            }
+            combinationsTilesIndices = sequences.flatMap { $0 }
         }
     }
 }

@@ -2,9 +2,9 @@
 import SwiftUI
 
 struct DailyRewardLabel: View {
-    @StateObject private var viewModel = ViewModel()
+    @StateObject private var storage = StorageService.shared
     
-    @State private var remainingTime = ""
+    @State private var remainingTime = "23:59"
     
     private let timer = Timer.TimerPublisher(interval: 1,
                                              runLoop: .main,
@@ -17,7 +17,7 @@ struct DailyRewardLabel: View {
                 .aspectRatio(contentMode: .fit)
             
             ZStack {
-                if viewModel.isDailyBonusAvailable {
+                if isDailyBonusAvailable {
                     claimButton
                 } else {
                     timerView
@@ -36,7 +36,9 @@ struct DailyRewardLabel: View {
             }
         }
         .onAppear {
-            remainingTime = viewModel.remainingTime
+            if let getRemainingTime {
+                remainingTime = getRemainingTime
+            }
         }
     }
     
@@ -51,18 +53,61 @@ struct DailyRewardLabel: View {
             Text(remainingTime)
                 .font(.multiroundPro(size: 57/Double.delim))
                 .onReceive(timer) { _ in
-                    remainingTime = viewModel.remainingTime
+                    if let getRemainingTime {
+                        remainingTime = getRemainingTime
+                    }
                 }
         }
     }
     
     var claimButton: some View {
         Button {
-            viewModel.claimDailyBonus()
+            withAnimation {
+                claimDailyBonus()
+            }
         } label: {
             Text("Claim")
                 .font(.multiroundPro(size: 57/Double.delim))
+                .padding(10)
         }
+    }
+}
+
+extension DailyRewardLabel {
+    var isDailyBonusAvailable: Bool {
+        guard let lastDailyBonusPick = storage.dailyBonusLastClaimDate else { return true }
+        
+        let currentDate = Date()
+        let calendar = Calendar.current
+        
+        let components = calendar.dateComponents([.hour], from: lastDailyBonusPick, to: currentDate)
+        
+        if let hours = components.hour, hours >= 24 {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    var getRemainingTime: String? {
+        guard !isDailyBonusAvailable, let lastDailyBonusPick = storage.dailyBonusLastClaimDate else { return nil }
+        
+        let calendar = Calendar.current
+        let now = Date()
+        
+        let remainingSeconds = calendar.dateComponents([.second],
+                                                       from: now,
+                                                       to: calendar.date(byAdding: .day,
+                                                                         value: 1,
+                                                                         to: lastDailyBonusPick)!).second!
+        let hours = remainingSeconds / 3600
+        let minutes = (remainingSeconds % 3600) / 60
+        return String(format: "%02d:%02d", hours, minutes)
+    }
+    
+    func claimDailyBonus() {
+        storage.dailyBonusLastClaimDate = Date()
+        storage.coinsAmount += 1000
     }
 }
 
