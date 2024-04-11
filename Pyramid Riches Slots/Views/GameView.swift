@@ -26,6 +26,9 @@ struct GameView: View {
         .onAppear {
             viewModel.refillBoard()
         }
+        .onChange(of: viewModel.combinationsTilesIndices, perform: { value in
+            print(value)
+        })
     }
     
     var topUI: some View {
@@ -140,16 +143,18 @@ fileprivate struct Tile: View {
     
     @State private var isAnimating = false
     
+    let animation = Animation
+                    .easeInOut(duration: 1)
+                    .repeatForever(autoreverses: true)
+    
     var body: some View {
         Image(imageNamed)
             .shadow(color: .blue,
                     radius: isAnimating ? 30 : 0)
             .scaleEffect(isAnimating ? 1.2 : 1.0)
-            .onChange(of: isPulsating) {
-                if $0 {
-                    withAnimation(Animation.easeInOut(duration: 1).repeatForever(autoreverses: true)) {
-                        isAnimating = true
-                    }
+            .onChange(of: isPulsating) { isPulsating in
+                withAnimation(isPulsating ? animation : .default) {
+                    isAnimating = isPulsating
                 }
             }
     }

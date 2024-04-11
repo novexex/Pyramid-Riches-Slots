@@ -4,23 +4,40 @@ import SwiftUI
 struct TermsAndPrivacyView: View {
     let webView: WebView
     let isControlPanelShowed: Bool
+    let applicationOrientation: UIInterfaceOrientationMask
     @StateObject private var viewModel: ViewModel
+    
     
     init(urlString: String, isControlPanelShowed: Bool = false) {
         let wrappedViewModel = ViewModel()
         _viewModel = StateObject(wrappedValue: wrappedViewModel)
         webView = WebView(urlString: urlString,
                           delegate: wrappedViewModel)
+        applicationOrientation = AppDelegate.supportedInterfaceOrientations
         self.isControlPanelShowed = isControlPanelShowed
     }
     
     var body: some View {
-        VStack(spacing: 0) {
-            webView
-            
-            if isControlPanelShowed {
-                controlPanel
+        ZStack {
+            VStack(spacing: 0) {
+                Button {
+                    
+                } label: {
+                    
+                }
+                
+                webView
+                
+                if isControlPanelShowed {
+                    controlPanel
+                }
             }
+        }
+        .onAppear {
+            AppDelegate.supportedInterfaceOrientations = .all
+        }
+        .onWillDisappear {
+            AppDelegate.supportedInterfaceOrientations = applicationOrientation
         }
     }
     
