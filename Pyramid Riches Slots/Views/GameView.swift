@@ -1,11 +1,14 @@
 
 import SwiftUI
+import PopupView
 
 struct GameView: View {
     @Environment(\.dismiss) private var dismiss
     
     @StateObject private var viewModel = ViewModel()
     @StateObject private var storage = StorageService.shared
+    
+    @State private var isTotalWinViewPresented = false
     
     var body: some View {
         ZStack {
@@ -23,11 +26,19 @@ struct GameView: View {
                 bottomUI
             }
         }
+        .popup(isPresented: $isTotalWinViewPresented) {
+            TotalWinView(isPresented: $isTotalWinViewPresented,
+                         goToHome: dismiss,
+                         win: viewModel.winAmount)
+        }
         .onAppear {
             viewModel.refillBoard()
+            viewModel.winAmount = 40000
         }
-        .onChange(of: viewModel.combinationsTilesIndices, perform: { value in
-            print(value)
+        .onChange(of: viewModel.winAmount, perform: { value in
+            if value >= 1000 {
+                isTotalWinViewPresented.toggle()
+            }
         })
     }
     

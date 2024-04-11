@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A4A366A2BC821F10056DB03 /* TotalWinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4A36692BC821F10056DB03 /* TotalWinView.swift */; };
+		0A4A366D2BC8220C0056DB03 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 0A4A366C2BC8220C0056DB03 /* PopupView */; };
+		0A4A366F2BC8245F0056DB03 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4A366E2BC8245F0056DB03 /* Int.swift */; };
 		0AB228AD2BBF4C6C0012BCB5 /* PyramidRichesSlotsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB2289A2BBF4C6C0012BCB5 /* PyramidRichesSlotsApp.swift */; };
 		0AB228AE2BBF4C6C0012BCB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AB2289C2BBF4C6C0012BCB5 /* Assets.xcassets */; };
 		0AB228AF2BBF4C6C0012BCB5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AB2289E2BBF4C6C0012BCB5 /* Preview Assets.xcassets */; };
@@ -38,6 +41,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A4A36692BC821F10056DB03 /* TotalWinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalWinView.swift; sourceTree = "<group>"; };
+		0A4A366E2BC8245F0056DB03 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		0AB2289A2BBF4C6C0012BCB5 /* PyramidRichesSlotsApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PyramidRichesSlotsApp.swift; sourceTree = "<group>"; };
 		0AB2289C2BBF4C6C0012BCB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0AB2289E2BBF4C6C0012BCB5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -75,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A4A366D2BC8220C0056DB03 /* PopupView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +153,7 @@
 				0AB228A52BBF4C6C0012BCB5 /* View.swift */,
 				0AB228A62BBF4C6C0012BCB5 /* Font.swift */,
 				0AB228C42BC07CFE0012BCB5 /* Double.swift */,
+				0A4A366E2BC8245F0056DB03 /* Int.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -159,6 +166,7 @@
 				0AB228CF2BC384C70012BCB5 /* InfoView.swift */,
 				0AB228DB2BC3A3BE0012BCB5 /* GameView.swift */,
 				0AB228E32BC4E33B0012BCB5 /* TermsAndPrivacyView.swift */,
+				0A4A36692BC821F10056DB03 /* TotalWinView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -237,6 +245,9 @@
 			dependencies = (
 			);
 			name = "Pyramid Riches Slots";
+			packageProductDependencies = (
+				0A4A366C2BC8220C0056DB03 /* PopupView */,
+			);
 			productName = SwiftUIApps;
 			productReference = EB63AE7A2AE810A300454218 /* Pyramid Riches Slots.app */;
 			productType = "com.apple.product-type.application";
@@ -265,6 +276,9 @@
 				Base,
 			);
 			mainGroup = EB63AE712AE810A300454218;
+			packageReferences = (
+				0A4A366B2BC8220C0056DB03 /* XCRemoteSwiftPackageReference "PopupView" */,
+			);
 			productRefGroup = EB63AE7B2AE810A300454218 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -304,6 +318,7 @@
 				0AB228E62BC4EADF0012BCB5 /* TermsAndPrivacyViewModel.swift in Sources */,
 				0AB228C82BC37CE60012BCB5 /* CoinsLabel.swift in Sources */,
 				0AB228DC2BC3A3BE0012BCB5 /* GameView.swift in Sources */,
+				0A4A366F2BC8245F0056DB03 /* Int.swift in Sources */,
 				0AB228CE2BC384990012BCB5 /* InfoButton.swift in Sources */,
 				0AB228E42BC4E33B0012BCB5 /* TermsAndPrivacyView.swift in Sources */,
 				0AB228B62BBF4C6C0012BCB5 /* MenuView.swift in Sources */,
@@ -317,6 +332,7 @@
 				0AB228B82BBF4C6C0012BCB5 /* StorageService.swift in Sources */,
 				0AB228BE2BC07A800012BCB5 /* NotificationsView.swift in Sources */,
 				0AB228D02BC384C70012BCB5 /* InfoView.swift in Sources */,
+				0A4A366A2BC821F10056DB03 /* TotalWinView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,7 +464,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"$(TARGET_NAME)/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = ZXG6482Y8U;
 				ENABLE_PREVIEWS = YES;
@@ -483,7 +499,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"$(TARGET_NAME)/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = ZXG6482Y8U;
 				ENABLE_PREVIEWS = YES;
@@ -534,6 +550,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0A4A366B2BC8220C0056DB03 /* XCRemoteSwiftPackageReference "PopupView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/PopupView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0A4A366C2BC8220C0056DB03 /* PopupView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0A4A366B2BC8220C0056DB03 /* XCRemoteSwiftPackageReference "PopupView" */;
+			productName = PopupView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EB63AE722AE810A300454218 /* Project object */;
 }

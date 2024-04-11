@@ -10,7 +10,7 @@ struct CoinsLabel: View {
                 .shadow(color: .black,
                         radius: 4, x: -3, y: 3)
             
-            Text(storage.coinsAmount.description)
+            Text(storage.coinsAmount.descriptionWithSpaces)
                 .font(.muller(size: 70/Double.delim))
                 .foregroundStyle(Constants.coinsGradient)
                 .lineLimit(1)
