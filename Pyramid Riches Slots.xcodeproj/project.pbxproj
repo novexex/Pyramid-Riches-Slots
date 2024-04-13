@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0A4A366A2BC821F10056DB03 /* TotalWinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4A36692BC821F10056DB03 /* TotalWinView.swift */; };
-		0A4A366D2BC8220C0056DB03 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 0A4A366C2BC8220C0056DB03 /* PopupView */; };
 		0A4A366F2BC8245F0056DB03 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4A366E2BC8245F0056DB03 /* Int.swift */; };
+		0A4A36722BC8DE9D0056DB03 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 0A4A36712BC8DE9D0056DB03 /* PopupView */; };
 		0AB228AD2BBF4C6C0012BCB5 /* PyramidRichesSlotsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB2289A2BBF4C6C0012BCB5 /* PyramidRichesSlotsApp.swift */; };
 		0AB228AE2BBF4C6C0012BCB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AB2289C2BBF4C6C0012BCB5 /* Assets.xcassets */; };
 		0AB228AF2BBF4C6C0012BCB5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AB2289E2BBF4C6C0012BCB5 /* Preview Assets.xcassets */; };
@@ -80,7 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A4A366D2BC8220C0056DB03 /* PopupView in Frameworks */,
+				0A4A36722BC8DE9D0056DB03 /* PopupView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,7 +246,7 @@
 			);
 			name = "Pyramid Riches Slots";
 			packageProductDependencies = (
-				0A4A366C2BC8220C0056DB03 /* PopupView */,
+				0A4A36712BC8DE9D0056DB03 /* PopupView */,
 			);
 			productName = SwiftUIApps;
 			productReference = EB63AE7A2AE810A300454218 /* Pyramid Riches Slots.app */;
@@ -277,7 +277,7 @@
 			);
 			mainGroup = EB63AE712AE810A300454218;
 			packageReferences = (
-				0A4A366B2BC8220C0056DB03 /* XCRemoteSwiftPackageReference "PopupView" */,
+				0A4A36702BC8DE9D0056DB03 /* XCRemoteSwiftPackageReference "PopupView" */,
 			);
 			productRefGroup = EB63AE7B2AE810A300454218 /* Products */;
 			projectDirPath = "";
@@ -464,7 +464,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"$(TARGET_NAME)/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = ZXG6482Y8U;
 				ENABLE_PREVIEWS = YES;
@@ -489,7 +489,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -499,7 +499,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"$(TARGET_NAME)/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = ZXG6482Y8U;
 				ENABLE_PREVIEWS = YES;
@@ -524,7 +524,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -552,7 +552,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		0A4A366B2BC8220C0056DB03 /* XCRemoteSwiftPackageReference "PopupView" */ = {
+		0A4A36702BC8DE9D0056DB03 /* XCRemoteSwiftPackageReference "PopupView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/exyte/PopupView";
 			requirement = {
@@ -563,9 +563,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0A4A366C2BC8220C0056DB03 /* PopupView */ = {
+		0A4A36712BC8DE9D0056DB03 /* PopupView */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0A4A366B2BC8220C0056DB03 /* XCRemoteSwiftPackageReference "PopupView" */;
+			package = 0A4A36702BC8DE9D0056DB03 /* XCRemoteSwiftPackageReference "PopupView" */;
 			productName = PopupView;
 		};
 /* End XCSwiftPackageProductDependency section */

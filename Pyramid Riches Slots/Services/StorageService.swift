@@ -19,7 +19,7 @@ final class StorageService: ObservableObject {
     
     var coinsAmount: Int {
         get {
-            userDefaults.integer(forKey: Keys.coinsAmount)
+            userDefaults.object(forKey: Keys.coinsAmount) as? Int ?? 1000
         }
         
         set {

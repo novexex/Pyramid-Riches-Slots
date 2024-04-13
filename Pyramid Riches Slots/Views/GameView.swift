@@ -33,7 +33,6 @@ struct GameView: View {
         }
         .onAppear {
             viewModel.refillBoard()
-            viewModel.winAmount = 40000
         }
         .onChange(of: viewModel.winAmount, perform: { value in
             if value >= 1000 {
@@ -84,7 +83,7 @@ struct GameView: View {
                 viewModel.spin()
             }
         } label: {
-            Image(.spinButton)
+            Image(storage.coinsAmount < viewModel.betAmount || viewModel.betAmount == 0 ? .disabledSpinButton : .spinButton)
                 .overlay {
                     Text("Spin")
                         .font(.multiroundPro(size: 57/Double.delim))
@@ -97,9 +96,11 @@ struct GameView: View {
     var betLabel: some View {
         HStack(spacing: 0) {
             Button {
-                viewModel.betAmount -= 10
+                withAnimation {
+                    viewModel.betAmount -= 10
+                }
             } label: {
-                Image(.incrButton)
+                Image(viewModel.betAmount == 0 ? .disabledIncrButton : .incrButton)
                     .overlay {
                         Text("-")
                             .font(.multiroundPro(size: 57/Double.delim))
@@ -119,9 +120,11 @@ struct GameView: View {
                 }
             
             Button {
-                viewModel.betAmount += 10
+                withAnimation {
+                    viewModel.betAmount += 10
+                }
             } label: {
-                Image(.incrButton)
+                Image(viewModel.betAmount >= storage.coinsAmount ? .disabledIncrButton : .incrButton)
                     .overlay {
                         Text("+")
                             .font(.multiroundPro(size: 57/Double.delim))
